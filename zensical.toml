@@ -8,7 +8,7 @@ site_description = "A self-supervised foundation model for raw nanopore signals"
 
 repo_url = "https://github.com/guangzhaocs/Brieno"
 repo_name = "guangzhaocs/Brieno"
-edit_uri = "https://github.com/brieno-doc/brieno-doc.github.io/edit/main/docs/"
+# edit_uri = "https://github.com/brieno-doc/brieno-doc.github.io/edit/main/docs/"
 
 nav = [
   { "Home" = "index.md" },
@@ -41,7 +41,7 @@ favicon = "assets/favicon.svg"
 language = "en"
 features = [
   "announce.dismiss",
-  "content.action.edit",
+  # "content.action.edit",
   # "content.action.view",
   "content.code.annotate",
   "content.code.copy",
