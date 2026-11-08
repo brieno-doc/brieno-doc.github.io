@@ -1,174 +1,60 @@
 ---
-icon: lucide/rocket
+icon: lucide/house
 ---
 
-# Get started
+# Brieno
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+**A foundation model for raw nanopore signal through discrete tokenization.**
 
-## Commands
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-2026.11.05.764536-green)](https://www.biorxiv.org/content/10.64898/2026.11.05.764536v1)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/guangzhaocs/Brieno/blob/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/brieno)](https://pypi.org/project/brieno/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Brieno-yellow)](https://huggingface.co/guangzhaocs/Brieno)
 
-* [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
-* [`zensical build`][build] - Build your site
+## Overview
 
-  [new]: https://zensical.org/docs/usage/new/
-  [serve]: https://zensical.org/docs/usage/preview/
-  [build]: https://zensical.org/docs/usage/build/
+**Brieno** is a self-supervised model that learns reusable representations of raw
+nanopore signals. It first converts raw signals into discrete tokens through residual
+vector quantization and then pretrains a Transformer to predict masked tokens from their
+context. The pretrained Transformer can be fine-tuned with task-specific heads for
+multiple downstream tasks.
 
-## Examples
+![Brieno pipeline: tokenizer pretraining with residual vector quantization, masked-token pretraining of the transformer, and fine-tuning on downstream tasks](assets/model_overview.png)
 
-### Admonitions
+With frozen or fine-tuned features, the model:
 
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
+- identifies **species** without requiring reference genomes at inference time;
+- achieves higher overall accuracy than Dorado in **native-barcode demultiplexing**;
+- approaches Dorado’s **basecalling** performance across six genomes;
+- achieves a higher read-level AUROC than Dorado’s 5mC model for **CpG methylation detection**.
 
-!!! note
+## Where to go next
 
-    This is a **note** admonition. Use it to provide helpful information.
+<div class="grid cards" markdown>
 
-!!! warning
+-   :lucide-download: **[Installation](getting-started/installation.md)**
 
-    This is a **warning** admonition. Be careful!
+    Install Brieno and the extras for your raw-signal format.
 
-### Details
+-   :lucide-layers: **[Downstream tasks](getting-started/tasks.md)**
 
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
+    Basecalling, demultiplexing, species identification and modification calling.
 
-??? info "Click to expand for more info"
+-   :lucide-graduation-cap: **[Training guide](training/index.md)**
 
-    This content is hidden until you click to expand it.
-    Great for FAQs or long explanations.
+    Build your own model, from raw FAST5/POD5 to a pretrained transformer.
 
-## Code Blocks
+-   :lucide-terminal: **[CLI reference](reference/cli.md)**
 
-> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
+    Every `brieno` command and its options.
 
-``` python hl_lines="2" title="Code blocks"
-def greet(name):
-    print(f"Hello, {name}!")  # (1)!
+</div>
 
+## Name origin
 
-greet("Python")
-```
-
-1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
-
-    Code annotations allow to attach notes to lines of code.
-
-Code can also be highlighted inline: `#!python print("Hello, Python!")`.
-
-## Content tabs
-
-> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
-
-=== "Python"
-
-    ``` python
-    print("Hello from Python!")
-    ```
-
-=== "Rust"
-
-    ``` rs
-    println!("Hello from Rust!");
-    ```
-
-## Diagrams
-
-> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
-
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
-
-## Footnotes
-
-> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
-
-Here's a sentence with a footnote.[^1]
-
-Hover it, to see a tooltip.
-
-[^1]: This is the footnote.
-
-
-## Formatting
-
-> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
-
-- ==This was marked (highlight)==
-- ^^This was inserted (underline)^^
-- ~~This was deleted (strikethrough)~~
-- H~2~O
-- A^T^A
-- ++ctrl+alt+del++
-
-## Icons, Emojis
-
-> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
-
-* :sparkles: `:sparkles:`
-* :rocket: `:rocket:`
-* :tada: `:tada:`
-* :memo: `:memo:`
-* :eyes: `:eyes:`
-
-## Maths
-
-> Go to [documentation](https://zensical.org/docs/authoring/math/)
-
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-
-!!! warning "Needs configuration"
-    Note that MathJax is included via a `script` tag on this page and is not
-    configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
-    to configure it on all your pages if they are more Maths-heavy than these
-    simple starter pages.
-
-<script id="MathJax-script" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-
-  document$.subscribe(() => {
-    MathJax.startup.output.clearCache()
-    MathJax.typesetClear()
-    MathJax.texReset()
-    MathJax.typesetPromise()
-  })
-</script>
-
-## Task Lists
-
-> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
-
-* [x] Install Zensical
-* [x] Configure `zensical.toml`
-* [x] Write amazing documentation
-* [ ] Deploy anywhere
-
-## Tooltips
-
-> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
-
-[Hover me][example]
-
-  [example]: https://example.com "I'm a tooltip!"
+*Brieno* is a shortened form of [*Brienomyrus*](https://en.wikipedia.org/wiki/Brienomyrus), a genus of weakly
+electric fish that communicate through patterns of electric pulses. The name echoes Oxford
+Nanopore's fish-inspired tool names, such as Bonito and Dorado, and also reflects the
+model's aim to learn informative patterns in the ionic current signals recorded during
+nanopore sequencing.

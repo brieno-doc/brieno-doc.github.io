@@ -11,8 +11,24 @@ repo_name = "guangzhaocs/Brieno"
 edit_uri = "https://github.com/brieno-doc/brieno-doc.github.io/edit/main/docs/"
 
 nav = [
-  { "Get started" = "index.md" },
-  { "Markdown in 5min" = "markdown.md" },
+  { "Home" = "index.md" },
+  { "Getting started" = [
+    "getting-started/installation.md",
+    "getting-started/tasks.md",
+  ] },
+  { "Training guide" = [
+    "training/index.md",
+    "training/data-preparation.md",
+    "training/tokenizer.md",
+    "training/transformer.md",
+    "training/fine-tuning.md",
+  ] },
+  { "Reference" = [
+    "reference/cli.md",
+  ] },
+  { "About" = [
+    "about/citation.md",
+  ] },
 ]
 
 extra_css = ["stylesheets/extra.css"]
