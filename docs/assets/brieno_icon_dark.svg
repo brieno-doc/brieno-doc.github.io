@@ -1,0 +1,28 @@
+<svg viewBox="12 12 556 160" role="img" xmlns="http://www.w3.org/2000/svg"><title>Brieno</title>
+<desc>Logo: a stylized elephantfish (Mormyridae) with a biphasic electric-organ-discharge pulse train. </desc>
+<style>
+.fish { fill: #5DCAA5 }
+.fin  { fill: #4BBFA0 }
+.sig  { stroke: #E3FAF1; stroke-width: 5; fill: none; stroke-linecap: round; stroke-linejoin: round }
+</style>
+
+<path class="fish" d="M 68 62 C 146 40 286 36 338 56 C 358 66 368 80 368 92 C 368 104 358 116 338 128 C 286 148 146 144 68 122 Z"/>
+<path class="fish" d="M 68 62 C 50 54 34 43 20 27 C 30 50 36 70 36 86 C 50 79 60 69 68 66 Z"/>
+<path class="fish" d="M 68 122 C 50 130 34 140 20 155 C 30 133 36 112 36 98 C 50 105 60 115 68 118 Z"/>
+<path class="fish" d="M 337.9 112.0 C 353.5 113.5 371.0 116.5 385.9 126.7 C 380.3 136.8 366.3 134.2 355.3 128.7 C 346.1 123.0 340.2 116.9 338.1 113.7 Z"/>
+<path class="fin" d="M 172.0 48.0 C 172.0 33.7 168.7 24.8 161.3 21.2 C 150.7 23.0 136.3 33.3 124.0 42.9 Z"/>
+<path class="fin" d="M 198.0 137.0 C 197.8 150.3 193.0 161.6 181.7 166.0 C 163.4 166.8 136.9 157.2 113.6 148.8 Z"/>
+<path class="fin" d="M 226.2 92.1 C 219.7 103.1 217.5 116.6 224.1 120.7 C 228.7 110.0 231.0 97.5 226.2 92.1 Z"/>
+<circle cx="332" cy="76" r="9" fill="white"/>
+<circle cx="336.2" cy="77.6" r="5" fill="#093D30"/>
+<circle class="fish" cx="336.2" cy="77.6" r="5"/>
+<circle cx="334.2" cy="74.6" r="2" fill="white" opacity="0.5"/>
+<path class="sig" d="M 400 96 L 422 96 L 428 75 L 437 119 L 446 96 L 468 96 L 474 75 L 483 119 L 492 96 L 513 96 L 519 75 L 529 119 L 538 96 L 562 96"/>
+<circle fill="#5DCAA5" opacity="0.35" cx="88" cy="34" r="2.6"/>
+<circle fill="#5DCAA5" opacity="0.22" cx="180" cy="18" r="1.7"/>
+<circle fill="#5DCAA5" opacity="0.3" cx="240" cy="30" r="3.1"/>
+<circle fill="#5DCAA5" opacity="0.25" cx="300" cy="37" r="1.9"/>
+<circle fill="#5DCAA5" opacity="0.28" cx="72" cy="148" r="2.1"/>
+<circle fill="#5DCAA5" opacity="0.33" cx="218" cy="159" r="2.7"/>
+<circle fill="#5DCAA5" opacity="0.2" cx="282" cy="151" r="1.5"/>
+</svg>

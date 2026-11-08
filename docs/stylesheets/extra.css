@@ -1,0 +1,56 @@
+/* Larger header logo (theme default: 1.2rem) */
+.md-header__button.md-logo {
+  padding: 0.3rem;
+  margin: 0 0.2rem;
+}
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.8rem;
+}
+
+/* Brand colors from the Brieno logo (palette primary/accent = "custom")
+   Scheme B: light mint header, dark-green text and logo */
+:root > * {
+  --md-primary-fg-color:        #E3FAF1;
+  --md-primary-fg-color--light: #F1FDF8;
+  --md-primary-fg-color--dark:  #C9F0E1;
+  --md-primary-bg-color:        #093D30;
+  --md-primary-bg-color--light: #093D30B3;
+  --md-accent-fg-color:         #1D9E75;
+  --md-accent-fg-color--transparent: #1D9E751A;
+  --md-typeset-a-color:         #0F6E56;
+}
+[data-md-color-scheme="slate"] {
+  --md-hue: 165; /* greenish dark background to match the brand */
+  --md-primary-fg-color:        #093D30;
+  --md-primary-fg-color--light: #0C5A45;
+  --md-primary-fg-color--dark:  #062A21;
+  --md-primary-bg-color:        #E3FAF1;
+  --md-primary-bg-color--light: #E3FAF1B3;
+  --md-accent-fg-color:         #5DCAA5;
+  --md-accent-fg-color--transparent: #5DCAA51A;
+  --md-typeset-a-color:         #5DCAA5;
+}
+
+/* Light header: green-tinted search button instead of the theme's gray (#00000042) */
+[data-md-color-scheme="default"] .md-search__button {
+  background-color: #093D301A; /* 10% brand dark green */
+}
+[data-md-color-scheme="default"] .md-search__button:hover,
+[data-md-color-scheme="default"] .md-search__button:focus {
+  background-color: #093D3033; /* 20% */
+}
+[data-md-color-scheme="default"] .md-search__button::after {
+  background: #093D3024; /* "Ctrl+K" badge, 14% */
+}
+
+/* Subtler shadow under the header when scrolling
+   (theme default: 0 0 .2rem #0000001a, 0 .2rem .4rem #0003) */
+.md-header--shadow {
+  box-shadow: 0 0 .1rem #0000000d, 0 .1rem .2rem #0000001a;
+}
+
+/* Dark mode: light-colored logo on the dark-green header */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+  content: url("../assets/brieno_icon_dark.svg");
+}
